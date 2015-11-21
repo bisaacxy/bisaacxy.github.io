@@ -5,19 +5,19 @@
   
   <title>回溯法的练习 | 云塘食客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###问题###这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
-###思路###用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一">
+  <meta name="description" content="问题这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
+思路用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一步都对当前结果进行评估，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回溯法的练习">
 <meta property="og:url" content="http://yoursite.com/2015/11/17/2015-11-17-backtracktraining/index.html">
 <meta property="og:site_name" content="云塘食客">
-<meta property="og:description" content="###问题###这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
-###思路###用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一">
-<meta property="og:updated_time" content="2015-11-21T09:54:56.015Z">
+<meta property="og:description" content="问题这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
+思路用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一步都对当前结果进行评估，">
+<meta property="og:updated_time" content="2015-11-21T09:58:24.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯法的练习">
-<meta name="twitter:description" content="###问题###这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
-###思路###用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一">
+<meta name="twitter:description" content="问题这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。
+思路用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一步都对当前结果进行评估，">
   
     <link rel="alternative" href="/atom.xml" title="云塘食客" type="application/atom+xml">
   
@@ -89,13 +89,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###问题###<br>这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。</p>
-<p>###思路###<br>用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一步都对当前结果进行评估，确定是否该往下继续搜索或者返回结果。假设一个4*4的矩阵，如图  </p>
+        <h3 id="问题">问题</h3><p>这是老师上课时提出的一个问题,在n*n的矩阵中，从一个顶点到与之相对的顶点，有多少条路径，其中前进的方向必然是总朝向目的顶点，而行进的路线只经过矩阵的一半，也就是说不是在整个矩阵中寻找路径。</p>
+<h3 id="思路">思路</h3><p>用回溯法来实现，需要设计的是如何进行深度优先搜索，确定剪枝函数，对于其解空间树的确立也并不复杂，矩阵的行（row）就可以作为深度搜索的层数，核心思想其实还是深度搜索，然后没每一步都对当前结果进行评估，确定是否该往下继续搜索或者返回结果。假设一个4*4的矩阵，如图  </p>
 <p>从这张图中可以很快得出，约束条件在于列号（j）总是大于或者等于行号（i）的。因为目标总是向着目标的方向前进，也就是不会向左和向后退。</p>
 <a id="more"></a>
-<h3 id="adfss">adfss</h3><p>基于以上的想法，实现关键的几个方法</p>
+<h3 id="代码">代码</h3><p>基于以上的想法，实现关键的几个方法</p>
 <p>首选是类中的变量定义<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;<span class="comment">//矩阵行列数，是所划分的方块数</span></span><br><span class="line"><span class="keyword">int</span> numberOfWays;<span class="comment">//路径的结果数</span></span><br><span class="line"><span class="keyword">int</span> temp;<span class="comment">//存放上一节点列数的变量</span></span><br></pre></td></tr></table></figure></p>
-<p>接下来是主要方法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">``` java&#10;private void backTrack(int i) &#123;&#10;&#9;if (i == n)&#10;&#9;&#9;numberOfWays++;//&#24050;&#32463;&#25628;&#32034;&#21040;&#26368;&#28145;&#23618;&#10;&#9;else &#123;&#10;&#9;&#9;for (int j = temp; j &#60;= n; j++) &#123;&#10;&#9;&#9;&#9;if (constraint(i, j)) &#123;&#10;&#9;&#9;&#9;&#9;temp = j;//&#23558;&#26412;&#23618;&#30340;&#21015;&#21495;&#20445;&#23384;&#21040;temp&#21464;&#37327;&#20013;&#10;&#9;&#9;&#9;&#9;backTrack(i + 1);//&#28385;&#36275;&#26465;&#20214;&#65292;&#32487;&#32493;&#21521;&#19979;&#25628;&#32034;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来是主要方法<code>backTrack</code>的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backTrack</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (i == n)</span><br><span class="line">		numberOfWays++;<span class="comment">//已经搜索到最深层</span></span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = temp; j &lt;= n; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (constraint(i, j)) &#123;</span><br><span class="line">				temp = j;<span class="comment">//将本层的列号保存到temp变量中</span></span><br><span class="line">				backTrack(i + <span class="number">1</span>);<span class="comment">//满足条件，继续向下搜索</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>约束函数</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">constraint</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; j)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在这里只是实现了回溯法寻找可能了路径数的问题，既没有优化的问题，也不需要输出所有的路径结果，相比之下，回溯法在<strong>输出所有结果</strong>时才能发挥出它的价值。</p>
 
@@ -111,7 +111,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/11/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/21/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -120,6 +120,11 @@
       </div>
     </a>
   
+  
+    <a href="/2015/10/25/2015-10-25-why/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第一篇</div>
+    </a>
   
 </nav>
 
@@ -134,7 +139,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -147,7 +152,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -159,11 +164,15 @@
       <ul>
         
           <li>
-            <a href="/2015/11/20/hello-world/">Hello World</a>
+            <a href="/2015/11/21/hello-world/">Hello World</a>
           </li>
         
           <li>
             <a href="/2015/11/17/2015-11-17-backtracktraining/">回溯法的练习</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/25/2015-10-25-why/">第一篇</a>
           </li>
         
       </ul>
