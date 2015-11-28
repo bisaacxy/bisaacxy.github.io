@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2015/11/28/post/</loc>
+    <lastmod>2015-11-28T11:36:32.417Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/11/21/hello-world/</loc>
+    <lastmod>2015-11-21T10:05:56.275Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/10/25/2015-10-25-why/</loc>
+    <lastmod>2015-11-21T10:05:24.521Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/11/17/2015-11-17-backtracktraining/</loc>
+    <lastmod>2015-11-21T09:58:24.433Z</lastmod>
+  </url>
+  
+</urlset>
